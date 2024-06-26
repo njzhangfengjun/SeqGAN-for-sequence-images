@@ -8,9 +8,7 @@ A implementation of SeqGAN in PyTorch, following the implementation in tensorflo
 * CUDA at least 8.0 (For GPU)
 
 ## Origin
-The idea is from paper [SeqGAN: Sequence Generative Adversarial Nets with Policy Gradient](https://arxiv.org/pdf/1609.05473.pdf)
-
-The code is rewrited in PyTorch with the structure largely from [Tensorflow Implementation](https://github.com/LantaoYu/SeqGAN)
+The code is rewritten in PyTorch, utilizing the inter layer similarity of sequence images to generate high-resolution images
 
 ## Runing
 ```
