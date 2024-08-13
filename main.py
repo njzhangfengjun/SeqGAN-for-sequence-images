@@ -27,15 +27,14 @@ opt = parser.parse_args()
 print(opt)
 
 # Basic Training Paramters
-SEED = 88
-BATCH_SIZE = 270 #64
-TOTAL_BATCH = 200 #200
-GENERATED_NUM = 54000 #10000
-POSITIVE_FILE = '2.data'
-NEGATIVE_FILE = 'gene2.data'
-EVAL_FILE = 'eval2.data'
-VOCAB_SIZE = 18629 #5000
-PRE_EPOCH_NUM = 5 #120
+criterion = torch.nn.CrossEntropyLoss()  # 损失函数
+optimizer = optim.Adam(model.parameters(), lr=0.001)  # 学习率设置为0.001
+scheduler = StepLR(optimizer, step_size=1, gamma=0.5)  # 学习率衰减率为0.5
+
+# 训练参数设置
+num_epochs = 50  # 训练周期
+num_iterations = 1000  # 每周期迭代次数
+batch_size = 64  # 批处理大小
 
 if opt.cuda is not None and opt.cuda >= 0:
     torch.cuda.set_device(opt.cuda)
